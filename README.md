@@ -632,7 +632,7 @@ Cuando haya funcionado, verás los valores dentro del monitor serial en "wokwi",
 
 3. Funcionamiento en la página web creada en phpMyAdmin:
 
-![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/51.png?raw=true)
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/52.png?raw=true)
 
 ## Evidencias
 
