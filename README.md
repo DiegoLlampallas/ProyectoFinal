@@ -8,7 +8,7 @@ Este repositorio se muestra el funcionamiento de un velocimetro paso por paso pr
 A través de la página https://wokwi.com/  se puede hacer simulaciones de programas con arduino y sensores.
 ### Descripción
 
-La ```Esp32``` la utilizamos en un entorno de adquision de datos, lo cual en esta practica ocuparemos un sensor (```Ultrasónico```) para por medio de la distancia que logra detectar usarlo para calcular velocidades, distancia, velocidad promedio y tiempo; a tráves de la página de node red se pueda visualizar los datos mostrados del sensor graficandolos usando gráficas interactivas que se mueven conforme sensea el sensor ultrasónico va mostrandolos en una página web creada por node red; Cabe aclarar que esta practica se usara un simulador llamado [WOKWI](https://https://wokwi.com/).
+La ```Esp32``` la utilizamos en un entorno de adquision de datos, lo cual en esta practica ocuparemos un sensor (```Ultrasónico```) para por medio de la distancia que logra detectar usarlo para calcular velocidades, distancia, velocidad promedio y tiempo; a tráves de la página de node red se pueda visualizar los datos mostrados del sensor graficandolos usando gráficas interactivas que se mueven conforme sensea el sensor ultrasónico va mostrandolos en una página web creada por node red y los datos se almacenarán en una base de datos llamada phpMyAdmin; Cabe aclarar que esta practica se usara un simulador llamado [WOKWI](https://https://wokwi.com/).
 
 
 ## Material Necesario
@@ -24,6 +24,7 @@ Para realizar esta practica se usaran los siguientes elementos:
 - tierra (para la pantalla  y fotorresistencia)
 - fotoresistencia
 - [NODE RED](http://localhost:1880/)
+- [XAMPP] phpMyAdmin
 
 # Pasos previos
 
@@ -214,7 +215,7 @@ if (!client.connected()) {
 
     StaticJsonDocument<128> doc;
 
-    //doc["DEVICE"] = "ESP32";
+    doc["DEVICE"] = "ESP32";
     //doc["Anho"] = 2022;
     //doc["Empresa"] = "Educatronicos";
     doc["VELOCIDAD1"] = (v);
@@ -554,9 +555,63 @@ Opción 2:
 
 ![](https://github.com/DiegoLlampallas/DHT22NODERED/blob/main/32.png?raw=true)
 
+
+
+
+## Ejecutar el programa XAMPP para usar el phpMyAdmin 
+
+1. Debemos abrir el programa llamado XAMPP.
+2. Dentro de la interfaz nos vamos a la fila llamada **Mysql**.
+3. Le damos doble click al boton **Admin**.
+
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/3.png?raw=true)
+
+Tras esto le damos en crear base de datos en la sección de la izquierda y le ponemos el nombre que deseemos (en este caso bicicleta):
+
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/4.png?raw=true)
+
+Tras esto le damos en tabla en la sección de la izquierda y le ponemos el nombre que deseemos (en este caso tabla) con 9 columnas.
+
+Despues llenamos los datos con la siguiente información:
+
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/43.png?raw=true)
+
+
+*Nota de ser necesario en la parte superior donde dice agregar 1 columnas al hacer click podemos agregar mas columnas.
+
+Tras crear y guardar la tabla se irá en la seccion de insertar y se añaden los siguientes datos:
+
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/44.png?raw=true)
+
+Tras esto dará un código que se ocupará en la sección de function donde se acoplará y se programará en esa sección:
+
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/45.png?raw=true)
+
+## Usarlo en node-red
+
+Se colocará el bloque de Mysql y un bloque de función para obtener los datos con el siguente codigo. 
+
+![](https://github.com/DiegoLlampallas/DHT22NODERED/blob/main/10.png?raw=true)
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/7.png?raw=true)
+
+Se anexan un nuevo function y mysql en la conexión:
+
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/46.png?raw=true)
+
+Tras esto se configuran primero function añadiendo el código dado anteriormente por phpMyAdmin y demás datos:
+
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/47.png?raw=true)
+
+Mysql:
+
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/48.png?raw=true)
+![](https://github.com/DiegoLlampallas/Basededatos/blob/main/49.png?raw=true)
+
+Al final se le dará en el boton rojo Deploy y se visualizaran los resultados.
+
 ## Resultados
 
-Cuando haya funcionado, verás los valores dentro del monitor serial en "wokwi" y en la página creada.
+Cuando haya funcionado, verás los valores dentro del monitor serial en "wokwi", en la página creada red-node y los datos en phpMyAdmin.
 
 ## Funcionamiento
 
@@ -564,7 +619,7 @@ Cuando haya funcionado, verás los valores dentro del monitor serial en "wokwi" 
 
 ![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/3.png?raw=true)
 
-2. Funcionamiento en la página web creada:
+2. Funcionamiento en la página web creada en red-node:
 
 ![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/1.png?raw=true)
 ![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/4.png?raw=true)
@@ -574,6 +629,10 @@ Cuando haya funcionado, verás los valores dentro del monitor serial en "wokwi" 
 ![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/8.png?raw=true)
 ![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/9.png?raw=true)
 ![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/10.png?raw=true)
+
+3. Funcionamiento en la página web creada en phpMyAdmin:
+
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/50.png?raw=true)
 
 ## Evidencias
 
