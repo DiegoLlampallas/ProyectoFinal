@@ -596,16 +596,16 @@ Se colocará el bloque de Mysql y un bloque de función para obtener los datos c
 
 Se anexan un nuevo function y mysql en la conexión:
 
-![](https://github.com/DiegoLlampallas/Basededatos/blob/main/46.png?raw=true)
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/46.png?raw=true)
 
 Tras esto se configuran primero function añadiendo el código dado anteriormente por phpMyAdmin y demás datos:
 
-![](https://github.com/DiegoLlampallas/Basededatos/blob/main/47.png?raw=true)
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/47.png?raw=true)
 
 Mysql:
 
-![](https://github.com/DiegoLlampallas/Basededatos/blob/main/48.png?raw=true)
-![](https://github.com/DiegoLlampallas/Basededatos/blob/main/49.png?raw=true)
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/48.png?raw=true)
+![](https://github.com/DiegoLlampallas/ProyectoFinal/blob/main/49.png?raw=true)
 
 Al final se le dará en el boton rojo Deploy y se visualizaran los resultados.
 
